@@ -1,0 +1,279 @@
+🗺️  MAPA MENTAL - FECHAMENTO JOBINHO
+═════════════════════════════════════════════════════════════════════════════
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                                                                             │
+│                          🏢 APLICAÇÃO                                       │
+│                                                                             │
+│  ┌──────────────────────────────────────────────────────────────────────┐  │
+│  │ App.tsx - Raiz da aplicação                                         │  │
+│  │ └─ Gerencia navegação (Home ↔ Editor)                             │  │
+│  │ └─ Carrega/Salva currentClosing                                   │  │
+│  └──────────────────────────────────────────────────────────────────────┘  │
+│                                    ↓                                        │
+│  ┌──────────────────────────────────────────────────────────────────────┐  │
+│  │ Header - Componente compartilhado                                  │  │
+│  │ └─ Logo, título, botões de navegação                             │  │
+│  └──────────────────────────────────────────────────────────────────────┘  │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                     HOME PAGE (Listagem & Criação)                         │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│ Hero Section (Bem-vindo)                                                  │
+│ ↓                                                                          │
+│ Botão "+ Criar Novo Fechamento"                                          │
+│ ↓                                                                          │
+│ ┌─ MonthForm (Criar/Editar)                                             │
+│ │ ├─ Campos: Nome, Período, Mês                                       │
+│ │ ├─ Validações                                                       │
+│ │ └─ onSubmit → handleCreateClosing()                                │
+│ │              → saveClosing() (storage)                             │
+│ │              → onSelectClosing() → EditorPage                      │
+│ │                                                                    │
+│ └─ Lista de Closings (Cartões)                                        │
+│    ├─ closing-card × N                                              │
+│    │ ├─ Título, Período, Mês                                       │
+│    │ ├─ Stats: Dias, Serviços                                      │
+│    │ └─ Botões: Editar, Deletar                                    │
+│    └─ Editar → onSelectClosing() → EditorPage                      │
+│                                                                    │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                     EDITOR PAGE (Edição)                                    │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│ ┌─────────────────────────────┐  ┌─────────────────────────────────────┐  │
+│ │   LEFT (Main Content)       │  │  RIGHT (Sidebar)                   │  │
+│ ├─────────────────────────────┤  ├─────────────────────────────────────┤  │
+│ │                             │  │ SummaryPanel                        │  │
+│ │ Add Day Section             │  │ ├─ Mês                            │  │
+│ │ ├─ Input: DD/MM             │  │ ├─ Período                        │  │
+│ │ ├─ Validação (isValidDate)  │  │ ├─ Dias com serviços             │  │
+│ │ ├─ getWeekdayFromDate()     │  │ ├─ Total serviços                │  │
+│ │ └─ onAddDay()               │  │ ├─ Total Mensal ⭐               │  │
+│ │    → createDay()            │  │ └─ Média/dia                      │  │
+│ │    → saveClosing()          │  │                                   │  │
+│ │                             │  │ Botões                            │  │
+│ │ DayBlocks (Grid)            │  │ └─ 📊 Ver Relatório              │  │
+│ │ ├─ day-block × N            │  │    → ReportPreview (Modal)       │  │
+│ │ │ ├─ Header                 │  │                                  │  │
+│ │ │ │ ├─ Data: 02/09          │  │                                  │  │
+│ │ │ │ ├─ Dia: Terça-feira     │  │                                  │  │
+│ │ │ │ ├─ Qty: 1 serviço       │  │                                  │  │
+│ │ │ │ └─ Total: R$ 110,00 ✓   │  │                                  │  │
+│ │ │ │                         │  │                                  │  │
+│ │ │ ├─ ServiceCards (List)    │  │                                  │  │
+│ │ │ │ ├─ service-card × M     │  │                                  │  │
+│ │ │ │ │ ├─ Veículo: Prisma   │  │                                  │  │
+│ │ │ │ │ ├─ Placa: FUY4738    │  │                                  │  │
+│ │ │ │ │ ├─ Valor: R$ 110,00  │  │                                  │  │
+│ │ │ │ │ ├─ Desc: Balanc...   │  │                                  │  │
+│ │ │ │ │ ├─ ✎ Editar          │  │                                  │  │
+│ │ │ │ │ │ └─ onEdit()        │  │                                  │  │
+│ │ │ │ │ │    → saveClosing() │  │                                  │  │
+│ │ │ │ │ └─ 🗑 Deletar         │  │                                  │  │
+│ │ │ │ │    → onDelete()      │  │                                  │  │
+│ │ │ │ │    → saveClosing()   │  │                                  │  │
+│ │ │ │ └─ [Modo Edição]       │  │                                  │  │
+│ │ │ │    ├─ Inputs inline    │  │                                  │  │
+│ │ │ │    ├─ ✓ Salvar          │  │                                  │  │
+│ │ │ │    └─ ✕ Cancelar        │  │                                  │  │
+│ │ │ │                        │  │                                  │  │
+│ │ │ └─ + Add Service Btn    │  │                                  │  │
+│ │ │    → showForm = true    │  │                                  │  │
+│ │ │    └─ ServiceForm       │  │                                  │  │
+│ │ │       ├─ Veículo*       │  │                                  │  │
+│ │ │       ├─ Placa          │  │                                  │  │
+│ │ │       ├─ Valor*         │  │                                  │  │
+│ │ │       ├─ Descrição      │  │                                  │  │
+│ │ │       ├─ + Add Service  │  │                                  │  │
+│ │ │       │  → handleAdd()  │  │                                  │  │
+│ │ │       │  → saveClosing()│  │                                  │  │
+│ │ │       └─ Cancelar       │  │                                  │  │
+│ │ │                         │  │                                  │  │
+│ │ │ └─ 🗑 Delete Day        │  │                                  │  │
+│ │ │    → onDeleteDay()      │  │                                  │  │
+│ │ │    → saveClosing()      │  │                                  │  │
+│ │ │                         │  │                                  │  │
+│ │ └─ [+ Next DayBlock]      │  │                                  │  │
+│ │                           │  │                                  │  │
+│ └─────────────────────────────┘  └─────────────────────────────────────┘  │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                  REPORT PREVIEW (Modal - Relatório)                        │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│ Header:                                                                    │
+│ ├─ Título: Jobinho                                                       │
+│ ├─ Período: 01/09 à 30/09                                                │
+│ ├─ Mês: Setembro                                                          │
+│ └─ Total Geral: R$ 2.245,00 ✓                                            │
+│                                                                             │
+│ Body (Scrollável):                                                         │
+│ ├─ Dia 1 (02/09 - Terça-feira)                                           │
+│ │ ├─ Tabela com serviços                                               │
+│ │ │ ├─ Veículo | Placa | Descrição | Valor                          │
+│ │ │ └─ Prisma | FUY4738 | 2 balanc... | R$ 110,00                   │
+│ │ └─ Subtotal: R$ 110,00                                             │
+│ │                                                                      │
+│ ├─ Dia 2 (03/09 - Quarta-feira)                                       │
+│ │ ├─ Tabela com serviços × 2                                         │
+│ │ │ ├─ Focus | PLG7576 | 1 montagem | R$ 20,00                     │
+│ │ │ └─ ASX | NWH7E26 | Alinhamento | R$ 70,00                       │
+│ │ └─ Subtotal: R$ 90,00                                              │
+│ │                                                                      │
+│ └─ [... mais dias ...]                                                 │
+│                                                                             │
+│ Footer:                                                                    │
+│ ├─ Total de Serviços: 26                                                 │
+│ └─ Valor Total: R$ 2.245,00                                             │
+│                                                                             │
+│ Botões:                                                                    │
+│ ├─ 🖨 Imprimir → window.print()                                         │
+│ └─ Fechar                                                               │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                       FLUXO DE DADOS & CÁLCULOS                            │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│ Usuário Adiciona Serviço:                                                │
+│ ┌─────────────────────────────────────────────────────────────┐          │
+│ │ ServiceForm.onAdd(service)                                 │          │
+│ │ ↓                                                           │          │
+│ │ DayBlock.onAddService(dayId, service)                     │          │
+│ │ ↓                                                           │          │
+│ │ EditorPage.handleAddService()                             │          │
+│ │ ├─ Cria updatedDays com novo serviço                      │          │
+│ │ ├─ Cria updatedClosing com novo closing                  │          │
+│ │ ├─ setCurrentClosing(updatedClosing)                      │          │
+│ │ ├─ saveClosing(updatedClosing) → storage.ts              │          │
+│ │ ├─ onSave(updatedClosing) → App.tsx                       │          │
+│ │ └─ saveCurrentClosing() → localStorage                    │          │
+│ │ ↓                                                           │          │
+│ │ SummaryPanel recebe novo closing                          │          │
+│ │ ├─ calculateMonthlyTotal() → totals.ts ✓                │          │
+│ │ ├─ countTotalServices() → totals.ts ✓                    │          │
+│ │ └─ Re-render com novos valores                           │          │
+│ └─────────────────────────────────────────────────────────────┘          │
+│                                                                             │
+│ Cálculos Automáticos:                                                    │
+│ ┌─────────────────────────────────────────────────────────────┐          │
+│ │ Total por Dia:                                             │          │
+│ │ = SOMA(todos os serviços.value daquele dia)               │          │
+│ │ Calculado por: calculateDayTotal(day)                     │          │
+│ │                                                             │          │
+│ │ Total Mensal:                                             │          │
+│ │ = SOMA(todos os totais dos dias)                         │          │
+│ │ Calculado por: calculateMonthlyTotal(closing)             │          │
+│ │                                                             │          │
+│ │ Quantidade de Serviços:                                  │          │
+│ │ = CONTAGEM(todos os serviços)                           │          │
+│ │ Calculado por: countTotalServices(closing)                │          │
+│ │                                                             │          │
+│ │ Média por Dia:                                           │          │
+│ │ = Total Mensal / Quantidade de Dias com Serviços         │          │
+│ │ Calculado por: getClosingStats(closing)                  │          │
+│ └─────────────────────────────────────────────────────────────┘          │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                        PERSISTÊNCIA (Storage)                              │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│ LocalStorage Keys:                                                        │
+│                                                                             │
+│ 1. "fechamento_jobinho_closings"                                         │
+│    └─ Array de MonthlyClosing[]                                          │
+│    └─ Todos os fechamentos salvos                                        │
+│    └─ Carregado em: HomePage                                            │
+│                                                                             │
+│ 2. "fechamento_jobinho_current"                                          │
+│    └─ Um MonthlyClosing                                                  │
+│    └─ Fechamento em edição agora                                        │
+│    └─ Persist em: App.tsx (useEffect)                                   │
+│    └─ Usado para: Reabrir editor ao recarregar                         │
+│                                                                             │
+│ Funções:                                                                  │
+│ └─ storage.ts                                                             │
+│    ├─ saveClosings() - salva array                                      │
+│    ├─ loadClosings() - carrega array                                    │
+│    ├─ saveCurrentClosing() - sessão                                     │
+│    ├─ loadCurrentClosing() - session                                    │
+│    ├─ saveClosing() - salva e valida                                   │
+│    ├─ deleteClosing() - remove                                         │
+│    └─ clearAll() - limpa tudo                                          │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                    UTILITÁRIOS & FORMATAÇÃO                                │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│ Currency (currency.ts):                                                   │
+│ ├─ formatCurrency(110) → "R$ 110,00"                                    │
+│ ├─ parseCurrency("R$ 110,00") → 110                                     │
+│ └─ isValidNumber(value) → boolean                                       │
+│                                                                             │
+│ Date (date.ts):                                                           │
+│ ├─ getDayName(0-6) → "Segunda-feira"                                    │
+│ ├─ getWeekdayFromDate("02/09", 2024) → "Terça-feira"                   │
+│ ├─ isValidDate("02/09") → true/false                                    │
+│ ├─ sortDateStrings(["10/09", "02/09"]) → ["02/09", "10/09"]            │
+│ └─ getPeriodDates("01/09 à 30/09") → {start, end}                      │
+│                                                                             │
+│ Totals (totals.ts):                                                      │
+│ ├─ calculateDayTotal(day) → number                                      │
+│ ├─ calculateMonthlyTotal(closing) → number                              │
+│ ├─ countTotalServices(closing) → number                                 │
+│ └─ getClosingStats(closing) → ClosingStats                             │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+═════════════════════════════════════════════════════════════════════════════
+
+🎯 FLUXO PRINCIPAL - Do Começo ao Fim
+
+1. Usuário acessa app
+   └─ App.tsx carrega currentClosing (localStorage)
+
+2. Se vazio: HomePage
+   └─ Listagem de fechamentos ou "Criar Novo"
+
+3. Clica "Criar": MonthForm
+   └─ Preenche Nome, Período, Mês
+   └─ saveClosing() → storage
+
+4. Abre Editor: EditorPage
+   └─ Adiciona dias (DD/MM)
+   └─ Para cada dia: Adiciona serviços
+   └─ Cada ação: saveClosing()
+
+5. Cálculos automáticos:
+   └─ SummaryPanel mostra totais
+   └─ Re-render em tempo real
+
+6. Visualiza relatório:
+   └─ ReportPreview (Modal)
+   └─ Imprime ou fecha
+
+7. Dados persistidos:
+   └─ LocalStorage sempre atualizado
+   └─ Recarregar página: dados ainda lá
+
+═════════════════════════════════════════════════════════════════════════════
+
+Pronto! Agora execute:
+
+npm install
+npm run dev
+
+🚀

@@ -1,0 +1,145 @@
+.toolbar-card {
+  padding: 0.875rem;
+  margin-bottom: 0.875rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.section-card {
+  padding: 0.875rem;
+}
+
+.section-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.summary-card {
+  padding: 0.875rem;
+}
+
+.summary-card h3 {
+  margin-bottom: 0.75rem;
+}
+
+.closing-info-fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  align-items: start;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 920px) {
+  .closing-info-fields {
+    grid-template-columns: 1fr;
+  }
+}
+
+.closing-summary-compact {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 1.5rem;
+  padding: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  background: var(--card-bg-soft);
+  margin-bottom: 1rem;
+}
+
+.summary-left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.summary-item span,
+.summary-total span {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.summary-item strong,
+.summary-total strong {
+  display: block;
+  font-size: 1rem;
+  color: var(--text-color);
+}
+
+.summary-total {
+  min-width: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  text-align: right;
+}
+
+.summary-total strong {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.summary-list {
+  display: grid;
+  gap: 0.625rem;
+}
+
+.summary-list div {
+  background: var(--surface-soft);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 0.625rem;
+}
+
+.summary-list span {
+  display: block;
+  color: var(--muted);
+}
+
+.summary-list strong {
+  display: block;
+  font-size: 1.1rem;
+}
+
+.calendar-input {
+  width: 100%;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 0.75rem;
+  min-height: 44px;
+}
+
+.period-display {
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.calendar-field {
+  max-width: 100%;
+}
+
+.form-actions-row {
+  display: flex;
+  gap: 0.625rem;
+}
+
+.service-form-submit,
+.service-form-cancel {
+  min-height: 44px;
+}
+
+.report-toggle-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.report-toggle-button {
+  min-width: min(100%, 16rem);
+  min-height: 44px;
+}

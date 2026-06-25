@@ -1,0 +1,61 @@
+@media print {
+  html,
+  body {
+    background: #ffffff !important;
+  }
+
+  .no-print,
+  .app-header,
+  .toolbar-card,
+  .report-actions,
+  .report-toggle-card,
+  .main-nav,
+  .nav-link,
+  .btn,
+  form,
+  input,
+  select,
+  textarea,
+  .calendar-field,
+  .service-form-card,
+  .history-header-row,
+  .history-actions,
+  .service-row-actions,
+  .service-type-manager-list,
+  .service-type-create-row {
+    display: none !important;
+  }
+
+  .page-wrapper {
+    padding: 0 !important;
+  }
+
+  .content-container,
+  .report-root,
+  .report-sheet {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    background: #ffffff !important;
+    color: #111827 !important;
+  }
+
+  .report-top {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  .report-day {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  .report-row,
+  .report-row.head,
+  .report-row.subtotal {
+    break-inside: avoid;
+  }
+}

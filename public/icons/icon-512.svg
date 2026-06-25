@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Fechamento Mensal">
+  <rect width="512" height="512" rx="76" fill="#111827"/>
+  <rect x="60" y="74" width="392" height="48" rx="14" fill="#f97316"/>
+  <rect x="60" y="154" width="392" height="272" rx="26" fill="#f3f4f6"/>
+  <rect x="100" y="206" width="154" height="30" rx="10" fill="#334155"/>
+  <rect x="100" y="266" width="304" height="24" rx="10" fill="#94a3b8"/>
+  <rect x="100" y="320" width="228" height="24" rx="10" fill="#94a3b8"/>
+  <circle cx="376" cy="346" r="48" fill="#16a34a"/>
+  <path d="M356 346l18 18 34-36" fill="none" stroke="#ffffff" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

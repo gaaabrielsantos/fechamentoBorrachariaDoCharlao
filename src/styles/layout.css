@@ -1,0 +1,296 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: 'Barlow Condensed', 'Segoe UI', Tahoma, sans-serif;
+  background:
+    radial-gradient(circle at 10% 0%, var(--body-gradient-top) 0%, rgba(0, 0, 0, 0) 30%),
+    radial-gradient(circle at 100% 20%, var(--body-gradient-side) 0%, rgba(0, 0, 0, 0) 30%),
+    var(--bg-color);
+  color: var(--text-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+.app-shell {
+  width: min(1280px, 94vw);
+  margin: 28px auto 48px;
+}
+
+.app-container {
+  min-height: 100vh;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.report-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.report-preview-hidden {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  width: 1200px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.report-preview-hidden {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  width: 1200px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.add-day-area {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.add-day-button {
+  width: min(320px, 100%);
+  padding: 0.95rem 1.1rem;
+  font-size: 1rem;
+}
+
+.hidden-date-input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+
+.summary-grid.summary-grid-compact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+}
+
+.summary-grid.summary-grid-compact p {
+  margin: 0;
+  white-space: nowrap;
+}
+
+.closing-info-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1rem;
+  align-items: end;
+}
+
+.reset-current-wrapper {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.collapsible-section {
+  margin-top: 1.25rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.collapsible-header {
+  width: 100%;
+  padding: 1rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 0;
+  background: var(--surface-soft);
+  color: var(--text-color);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.collapsible-content {
+  padding: 1rem;
+  animation: fadeIn 180ms ease;
+}
+
+.collapsible-icon {
+  font-size: 1.2rem;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.page-wrapper {
+  padding: 96px 0 32px;
+}
+
+.content-container {
+  width: min(1200px, 94vw);
+  margin: 0 auto;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn {
+  border: 0;
+  border-radius: 10px;
+  padding: 10px 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 120ms ease, box-shadow 120ms ease, opacity 120ms ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: var(--button-text);
+}
+
+.btn-primary:hover {
+  background: var(--accent-dark);
+}
+
+.btn-secondary {
+  background: var(--header-bg);
+  color: var(--header-text);
+}
+
+.btn-danger {
+  background: var(--danger);
+  color: var(--button-text);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--text-color);
+}
+
+.field {
+  display: grid;
+  gap: 6px;
+}
+
+.field label {
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.field input,
+.field textarea,
+.field select {
+  width: 100%;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  border-radius: 10px;
+  padding: 10px 12px;
+  color: var(--text-color);
+}
+
+.field textarea {
+  min-height: 74px;
+  resize: vertical;
+}
+
+.field input:focus,
+.field textarea:focus,
+.field select:focus {
+  outline: 2px solid rgba(214, 63, 43, 0.24);
+  border-color: var(--accent);
+}
+
+.field-error {
+  color: var(--danger);
+  font-size: 0.85rem;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+@media (max-width: 920px) {
+  .grid-2,
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .app-shell {
+    width: min(96vw, 1280px);
+    margin-top: 16px;
+  }
+
+  .page-wrapper {
+    padding-top: 96px;
+  }
+
+  .content-container {
+    width: min(96vw, 1200px);
+  }
+}

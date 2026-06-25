@@ -1,0 +1,196 @@
+@media (max-width: 1024px) {
+  .header-inner,
+  .content-container {
+    width: min(96vw, 1200px);
+  }
+
+  .layout-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .day-card-head {
+    align-items: flex-start;
+  }
+
+  .service-row-card {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .service-row-actions {
+    grid-column: 1 / -1;
+    justify-content: flex-end;
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 15px;
+  }
+
+  .page-wrapper {
+    padding-top: 6.25rem;
+  }
+
+  .add-day-button {
+    width: 100%;
+  }
+
+  .header-inner {
+    min-height: 4.8rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.625rem;
+    padding: 0.5rem 0;
+  }
+
+  .brand {
+    width: 100%;
+    justify-content: center;
+    font-size: 1.15rem;
+  }
+
+  .main-nav {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  .nav-link,
+  .btn {
+    width: 100%;
+    min-height: 44px;
+  }
+
+  .toolbar-card {
+    justify-content: stretch;
+  }
+
+  .toolbar-card .btn {
+    width: 100%;
+  }
+
+  .grid-2,
+  .grid-3,
+  .service-type-row,
+  .service-type-manager-row,
+  .service-type-create-row,
+  .form-actions-row,
+  .history-actions {
+    grid-template-columns: 1fr;
+    flex-direction: column;
+  }
+
+  .section-card,
+  .summary-card,
+  .service-form-card,
+  .history-card,
+  .report-sheet {
+    padding: 0.75rem;
+  }
+
+  .service-row-card {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  .service-row-actions {
+    grid-column: auto;
+    justify-content: stretch;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .day-card-head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .day-card-kpis {
+    text-align: left;
+  }
+
+  .days-stack {
+    gap: 2rem;
+  }
+
+  .report-top,
+  .report-overview {
+    grid-template-columns: 1fr;
+  }
+
+  .report-row {
+    grid-template-columns: 1fr;
+    gap: 0.35rem;
+  }
+
+  .history-header-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .history-action-btn {
+    width: 100%;
+    min-height: 44px;
+  }
+
+  .report-toggle-button {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .closing-summary-compact {
+    flex-direction: column;
+  }
+
+  .summary-total {
+    width: 100%;
+    min-width: auto;
+    align-items: flex-start;
+    text-align: left;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 14px;
+  }
+
+  .content-container {
+    width: min(98vw, 1200px);
+  }
+
+  .page-wrapper {
+    padding-top: 6.6rem;
+  }
+
+  .section-card,
+  .summary-card,
+  .service-form-card,
+  .history-card,
+  .report-sheet,
+  .day-card-body,
+  .day-card-head {
+    padding: 0.625rem;
+  }
+
+  .btn,
+  .calendar-input,
+  .service-type-row input[type='number'],
+  .service-type-create-row input,
+  .service-type-manager-row input,
+  .field input,
+  .field select,
+  .field textarea {
+    min-height: 44px;
+  }
+
+  .days-stack {
+    gap: 2rem;
+  }
+
+  .kpi.total strong,
+  .summary-list strong {
+    font-size: 1rem;
+  }
+}
