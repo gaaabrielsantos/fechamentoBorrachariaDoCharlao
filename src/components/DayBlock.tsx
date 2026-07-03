@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import { useState } from 'react';
+=======
+import { useEffect, useState } from 'react';
+>>>>>>> ef1e995 (Atualiza projeto fechamentoJobinho)
 import type { DayGroup, ServiceItem, ServiceType } from '../types';
 import { calculateDayServiceCount, calculateDayTotal } from '../utils/totals';
 import { formatCurrencyBRL } from '../utils/currency';
@@ -8,6 +12,11 @@ import ServiceForm from './ServiceForm';
 interface DayBlockProps {
   day: DayGroup;
   serviceTypes: ServiceType[];
+<<<<<<< HEAD
+=======
+  autoOpenNewServiceForm?: boolean;
+  onAutoOpenNewServiceFormHandled?: () => void;
+>>>>>>> ef1e995 (Atualiza projeto fechamentoJobinho)
   onAddService: (dayId: string, service: ServiceItem) => void;
   onEditService: (dayId: string, service: ServiceItem) => void;
   onDeleteService: (dayId: string, serviceId: string) => void;
@@ -17,6 +26,11 @@ interface DayBlockProps {
 export default function DayBlock({
   day,
   serviceTypes,
+<<<<<<< HEAD
+=======
+  autoOpenNewServiceForm = false,
+  onAutoOpenNewServiceFormHandled,
+>>>>>>> ef1e995 (Atualiza projeto fechamentoJobinho)
   onAddService,
   onEditService,
   onDeleteService,
@@ -26,6 +40,15 @@ export default function DayBlock({
   const dayTotal = calculateDayTotal(day);
   const serviceCount = calculateDayServiceCount(day);
 
+<<<<<<< HEAD
+=======
+  useEffect(() => {
+    if (!autoOpenNewServiceForm) return;
+    setShowNewForm(true);
+    onAutoOpenNewServiceFormHandled?.();
+  }, [autoOpenNewServiceForm, onAutoOpenNewServiceFormHandled]);
+
+>>>>>>> ef1e995 (Atualiza projeto fechamentoJobinho)
   return (
     <section className="card day-card">
       <header className="day-card-head">

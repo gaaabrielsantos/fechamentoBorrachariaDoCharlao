@@ -84,8 +84,12 @@
   .section-card,
   .summary-card,
   .service-form-card,
+<<<<<<< HEAD
   .history-card,
   .report-sheet {
+=======
+  .history-card {
+>>>>>>> ef1e995 (Atualiza projeto fechamentoJobinho)
     padding: 0.75rem;
   }
 
@@ -168,7 +172,10 @@
   .summary-card,
   .service-form-card,
   .history-card,
+<<<<<<< HEAD
   .report-sheet,
+=======
+>>>>>>> ef1e995 (Atualiza projeto fechamentoJobinho)
   .day-card-body,
   .day-card-head {
     padding: 0.625rem;
@@ -176,7 +183,11 @@
 
   .btn,
   .calendar-input,
+<<<<<<< HEAD
   .service-type-row input[type='number'],
+=======
+  .service-type-row input[type="number"],
+>>>>>>> ef1e995 (Atualiza projeto fechamentoJobinho)
   .service-type-create-row input,
   .service-type-manager-row input,
   .field input,

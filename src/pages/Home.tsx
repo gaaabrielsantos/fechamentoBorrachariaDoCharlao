@@ -1,11 +1,19 @@
+<<<<<<< HEAD
 import { useMemo } from 'react';
+=======
+import { useMemo, useState } from 'react';
+>>>>>>> ef1e995 (Atualiza projeto fechamentoJobinho)
 import type { DayGroup, MonthlyClosing, ServiceItem, ServiceType } from '../types';
 import AddDayButton from '../components/AddDayButton';
 import ClosingInfoForm from '../components/ClosingInfoForm';
 import DayBlock from '../components/DayBlock';
 import GeneratePdfButton from '../components/GeneratePdfButton';
 import ReportPreview from '../components/ReportPreview';
+<<<<<<< HEAD
 import { compareDateBR, getWeekdayFromDate } from '../utils/date';
+=======
+import { compareDateBR, getNextSuggestedDate, getWeekdayFromDate } from '../utils/date';
+>>>>>>> ef1e995 (Atualiza projeto fechamentoJobinho)
 
 interface HomePageProps {
   closing: MonthlyClosing;
@@ -22,11 +30,24 @@ export default function HomePage({
   onChange,
   onResetCurrentMonth,
 }: HomePageProps) {
+<<<<<<< HEAD
+=======
+  const [autoOpenServiceDayId, setAutoOpenServiceDayId] = useState<string | null>(null);
+
+>>>>>>> ef1e995 (Atualiza projeto fechamentoJobinho)
   const sortedDays = useMemo(
     () => [...closing.days].sort((a, b) => compareDateBR(a.date, b.date)),
     [closing.days],
   );
 
+<<<<<<< HEAD
+=======
+  const suggestedDate = useMemo(
+    () => getNextSuggestedDate(closing.days, closing.periodStart),
+    [closing.days, closing.periodStart],
+  );
+
+>>>>>>> ef1e995 (Atualiza projeto fechamentoJobinho)
   const addDayFromDate = (date: string) => {
     if (sortedDays.some((day) => day.date === date)) return;
 
@@ -37,6 +58,10 @@ export default function HomePage({
       services: [],
     };
 
+<<<<<<< HEAD
+=======
+    setAutoOpenServiceDayId(newDay.id);
+>>>>>>> ef1e995 (Atualiza projeto fechamentoJobinho)
     onChange({ ...closing, days: [...closing.days, newDay] });
   };
 
@@ -115,6 +140,11 @@ export default function HomePage({
               key={day.id}
               day={day}
               serviceTypes={serviceTypes}
+<<<<<<< HEAD
+=======
+              autoOpenNewServiceForm={autoOpenServiceDayId === day.id}
+              onAutoOpenNewServiceFormHandled={() => setAutoOpenServiceDayId(null)}
+>>>>>>> ef1e995 (Atualiza projeto fechamentoJobinho)
               onAddService={addService}
               onEditService={editService}
               onDeleteService={deleteService}
@@ -123,7 +153,11 @@ export default function HomePage({
           ))}
         </div>
 
+<<<<<<< HEAD
         <AddDayButton onDaySelected={addDayFromDate} />
+=======
+        <AddDayButton onDaySelected={addDayFromDate} suggestedDate={suggestedDate} />
+>>>>>>> ef1e995 (Atualiza projeto fechamentoJobinho)
       </section>
 
       <section className="card section-card">

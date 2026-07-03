@@ -10,13 +10,20 @@ interface ServiceTypeManagerProps {
 const defaultTypes: ServiceType[] = [
   {
     id: crypto.randomUUID(),
+<<<<<<< HEAD
     name: 'Alinhamento',
     nameSingular: 'alinhamento',
     namePlural: 'alinhamentos',
+=======
+    name: 'ALINHAMENTO',
+    nameSingular: 'ALINHAMENTO',
+    namePlural: 'ALINHAMENTOS',
+>>>>>>> ef1e995 (Atualiza projeto fechamentoJobinho)
     unitValue: 80,
   },
   {
     id: crypto.randomUUID(),
+<<<<<<< HEAD
     name: 'Balanceamento',
     nameSingular: 'balanceamento',
     namePlural: 'balanceamentos',
@@ -34,20 +41,51 @@ const defaultTypes: ServiceType[] = [
     name: 'Montagem',
     nameSingular: 'montagem',
     namePlural: 'montagens',
+=======
+    name: 'BALANCEAMENTO',
+    nameSingular: 'BALANCEAMENTO',
+    namePlural: 'BALANCEAMENTOS',
+>>>>>>> ef1e995 (Atualiza projeto fechamentoJobinho)
     unitValue: 20,
   },
   {
     id: crypto.randomUUID(),
+<<<<<<< HEAD
     name: 'Retirada de engate',
     nameSingular: 'retirada de engate',
     namePlural: 'retiradas de engate',
+=======
+    name: 'CONSERTO',
+    nameSingular: 'CONSERTO',
+    namePlural: 'CONSERTOS',
+    unitValue: 30,
+  },
+  {
+    id: crypto.randomUUID(),
+    name: 'MONTAGEM',
+    nameSingular: 'MONTAGEM',
+    namePlural: 'MONTAGENS',
+    unitValue: 20,
+  },
+  {
+    id: crypto.randomUUID(),
+    name: 'RETIRADA DE ENGATE',
+    nameSingular: 'RETIRADA DE ENGATE',
+    namePlural: 'RETIRADAS DE ENGATE',
+>>>>>>> ef1e995 (Atualiza projeto fechamentoJobinho)
     unitValue: 35,
   },
   {
     id: crypto.randomUUID(),
+<<<<<<< HEAD
     name: 'Rodizio de pneus e rodas',
     nameSingular: 'rodízio de pneus e rodas',
     namePlural: 'rodízios de pneus e rodas',
+=======
+    name: 'RODIZIO DE PNEUS E RODAS',
+    nameSingular: 'RODIZIO DE PNEUS E RODAS',
+    namePlural: 'RODIZIOS DE PNEUS E RODAS',
+>>>>>>> ef1e995 (Atualiza projeto fechamentoJobinho)
     unitValue: 70,
   },
 ];
@@ -61,7 +99,11 @@ export default function ServiceTypeManager({ serviceTypes, onChange }: ServiceTy
 
   const addType = () => {
     const value = Number.parseFloat(unitValue);
+<<<<<<< HEAD
     const name = serviceName.trim();
+=======
+    const name = serviceName.trim().toUpperCase();
+>>>>>>> ef1e995 (Atualiza projeto fechamentoJobinho)
     if (!name || value < 0) return;
 
     onChange([
@@ -87,7 +129,11 @@ export default function ServiceTypeManager({ serviceTypes, onChange }: ServiceTy
         if (item.id !== id) return item;
 
         if (field === 'name') {
+<<<<<<< HEAD
           const name = value.trim();
+=======
+          const name = value.trim().toUpperCase();
+>>>>>>> ef1e995 (Atualiza projeto fechamentoJobinho)
           return {
             ...item,
             name,
@@ -108,7 +154,11 @@ export default function ServiceTypeManager({ serviceTypes, onChange }: ServiceTy
       <div className="service-type-create-row">
         <input
           value={serviceName}
+<<<<<<< HEAD
           onChange={(event) => setServiceName(event.target.value)}
+=======
+          onChange={(event) => setServiceName(event.target.value.toUpperCase())}
+>>>>>>> ef1e995 (Atualiza projeto fechamentoJobinho)
           placeholder="Nome do tipo de serviço"
         />
         <input
@@ -119,8 +169,13 @@ export default function ServiceTypeManager({ serviceTypes, onChange }: ServiceTy
           onChange={(event) => setUnitValue(event.target.value)}
           placeholder="Valor unitário"
         />
+<<<<<<< HEAD
         <button type="button" className="btn btn-secondary" onClick={addType}>
           Adicionar tipo
+=======
+        <button type="button" className="btn add-service-type-button" onClick={addType}>
+          + Adicionar tipo
+>>>>>>> ef1e995 (Atualiza projeto fechamentoJobinho)
         </button>
       </div>
 
@@ -129,7 +184,11 @@ export default function ServiceTypeManager({ serviceTypes, onChange }: ServiceTy
           <div className="service-type-manager-row" key={serviceType.id}>
             <input
               value={serviceType.nameSingular ?? serviceType.name}
+<<<<<<< HEAD
               onChange={(event) => editType(serviceType.id, 'name', event.target.value)}
+=======
+              onChange={(event) => editType(serviceType.id, 'name', event.target.value.toUpperCase())}
+>>>>>>> ef1e995 (Atualiza projeto fechamentoJobinho)
               placeholder="Nome do tipo de serviço"
             />
             <input

@@ -11,7 +11,10 @@ export default function Header({ closing }: HeaderProps) {
   const periodStart = closing.periodStart ? formatDateFromISOToBR(closing.periodStart) : '-';
   const periodEnd = closing.periodEnd ? formatDateFromISOToBR(closing.periodEnd) : '-';
   const totalValue = formatCurrencyBRL(calculateMonthTotal(closing));
+<<<<<<< HEAD
   const monthLabel = closing.month || '-';
+=======
+>>>>>>> ef1e995 (Atualiza projeto fechamentoJobinho)
 
   return (
     <header className="jobinho-header">
@@ -26,11 +29,14 @@ export default function Header({ closing }: HeaderProps) {
             </div>
 
             <div className="info-item">
+<<<<<<< HEAD
               <span>mês</span>
               <strong>{monthLabel}</strong>
             </div>
 
             <div className="info-item">
+=======
+>>>>>>> ef1e995 (Atualiza projeto fechamentoJobinho)
               <span>Valor total</span>
               <strong>{totalValue}</strong>
             </div>

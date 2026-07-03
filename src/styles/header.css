@@ -1,6 +1,10 @@
 .jobinho-header {
   width: 100%;
+<<<<<<< HEAD
   background: #303030;
+=======
+  background: #333333;
+>>>>>>> ef1e995 (Atualiza projeto fechamentoJobinho)
   padding: 40px 70px;
   color: #ffffff;
 }
@@ -11,13 +15,22 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+<<<<<<< HEAD
   gap: 40px;
+=======
+  gap: 32px;
+>>>>>>> ef1e995 (Atualiza projeto fechamentoJobinho)
 }
 
 .header-left {
   display: flex;
   flex-direction: column;
   gap: 24px;
+<<<<<<< HEAD
+=======
+  flex: 1;
+  min-width: 0;
+>>>>>>> ef1e995 (Atualiza projeto fechamentoJobinho)
 }
 
 .header-left h1 {
@@ -32,8 +45,14 @@
 
 .header-info {
   display: flex;
+<<<<<<< HEAD
   align-items: flex-start;
   gap: 72px;
+=======
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+>>>>>>> ef1e995 (Atualiza projeto fechamentoJobinho)
   font-family: "Courier New", monospace;
 }
 
@@ -60,11 +79,21 @@
   display: flex;
   align-items: center;
   justify-content: center;
+<<<<<<< HEAD
 }
 
 .header-logo {
   width: 310px;
   height: auto;
+=======
+  flex-shrink: 0;
+  height: 100%;
+}
+
+.header-logo {
+  max-height: 280px;
+  width: auto;
+>>>>>>> ef1e995 (Atualiza projeto fechamentoJobinho)
   object-fit: contain;
 }
 
@@ -83,6 +112,7 @@
     font-size: 64px;
   }
 
+<<<<<<< HEAD
   .header-info {
     flex-direction: column;
     gap: 16px;
@@ -90,6 +120,11 @@
 
   .header-logo {
     width: 260px;
+=======
+  .header-logo {
+    max-height: 120px;
+    max-width: 200px;
+>>>>>>> ef1e995 (Atualiza projeto fechamentoJobinho)
   }
 }
 
@@ -99,6 +134,11 @@
   }
 
   .header-logo {
+<<<<<<< HEAD
     width: 220px;
+=======
+    max-height: 100px;
+    max-width: 180px;
+>>>>>>> ef1e995 (Atualiza projeto fechamentoJobinho)
   }
 }

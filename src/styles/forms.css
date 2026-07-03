@@ -143,3 +143,16 @@
   min-width: min(100%, 16rem);
   min-height: 44px;
 }
+<<<<<<< HEAD
+=======
+
+.add-service-type-button {
+  background-color: #333333;
+  color: #ffffff;
+}
+
+.vehicle-input,
+.plate-input {
+  text-transform: uppercase;
+}
+>>>>>>> ef1e995 (Atualiza projeto fechamentoJobinho)

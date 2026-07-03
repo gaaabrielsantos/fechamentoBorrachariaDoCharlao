@@ -3,7 +3,10 @@ import type { ChangeEvent } from 'react';
 import type { MonthlyClosing, ServiceType } from '../types';
 import DateRangePicker from './DateRangePicker';
 import ServiceTypeManager from './ServiceTypeManager';
+<<<<<<< HEAD
 import SummaryPanel from './SummaryPanel';
+=======
+>>>>>>> ef1e995 (Atualiza projeto fechamentoJobinho)
 import { monthNumberToName } from '../utils/monthlyStorage';
 
 interface ClosingInfoFormProps {
@@ -32,8 +35,11 @@ export default function ClosingInfoForm({
         <h3>Informações do fechamento</h3>
       </div>
 
+<<<<<<< HEAD
       <SummaryPanel closing={closing} />
 
+=======
+>>>>>>> ef1e995 (Atualiza projeto fechamentoJobinho)
       <div className="grid-2 closing-info-fields">
         <div className="field">
           <label htmlFor="closing-title">Nome do fechamento</label>

@@ -101,7 +101,14 @@
 
 .service-type-row {
   display: grid;
+<<<<<<< HEAD
   grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr) minmax(0, 0.8fr) minmax(0, 1fr);
+=======
+  grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr) minmax(
+      0,
+      0.8fr
+    ) minmax(0, 1fr);
+>>>>>>> ef1e995 (Atualiza projeto fechamentoJobinho)
   gap: 0.625rem;
   align-items: center;
   border: 1px solid var(--border-color);
@@ -116,7 +123,11 @@
   gap: 0.625rem;
 }
 
+<<<<<<< HEAD
 .service-type-main input[type='checkbox'] {
+=======
+.service-type-main input[type="checkbox"] {
+>>>>>>> ef1e995 (Atualiza projeto fechamentoJobinho)
   width: 20px;
   height: 20px;
 }
@@ -135,7 +146,11 @@
   font-size: 0.78rem;
 }
 
+<<<<<<< HEAD
 .service-type-row input[type='number'] {
+=======
+.service-type-row input[type="number"] {
+>>>>>>> ef1e995 (Atualiza projeto fechamentoJobinho)
   width: 100%;
   border: 1px solid var(--border-color);
   border-radius: 8px;
@@ -179,12 +194,41 @@
   width: min(260px, 100%);
 }
 
+<<<<<<< HEAD
+=======
+.add-service-type-button {
+  background-color: #333333;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.add-service-type-button:hover {
+  background-color: #242424;
+  transform: translateY(-1px);
+}
+
+>>>>>>> ef1e995 (Atualiza projeto fechamentoJobinho)
 .service-type-create-row input,
 .service-type-manager-row input {
   border: 1px solid var(--line);
   border-radius: 10px;
   padding: 0.5rem;
   min-height: 42px;
+<<<<<<< HEAD
+=======
+  text-transform: uppercase;
+}
+
+.service-type-name {
+  text-transform: uppercase;
+>>>>>>> ef1e995 (Atualiza projeto fechamentoJobinho)
 }
 
 .service-type-manager-list {

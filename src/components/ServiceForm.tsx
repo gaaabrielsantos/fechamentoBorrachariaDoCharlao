@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import { useMemo, useState } from 'react';
+=======
+import { useEffect, useMemo, useRef, useState } from 'react';
+>>>>>>> ef1e995 (Atualiza projeto fechamentoJobinho)
 import type { SelectedServiceType, ServiceItem, ServiceType } from '../types';
 import { calculateSelectedServicesTotal, generateServiceDescription } from '../utils/serviceDescription';
 import ServiceTypeCheckboxList from './ServiceTypeCheckboxList';
@@ -25,8 +29,16 @@ export default function ServiceForm({
   onCancel,
   submitLabel = 'Salvar serviço',
 }: ServiceFormProps) {
+<<<<<<< HEAD
   const [vehicle, setVehicle] = useState(initial?.vehicle ?? emptyService.vehicle);
   const [plate, setPlate] = useState(initial?.plate === '-' ? '' : (initial?.plate ?? emptyService.plate));
+=======
+  const vehicleInputRef = useRef<HTMLInputElement>(null);
+  const [vehicle, setVehicle] = useState((initial?.vehicle ?? emptyService.vehicle).toUpperCase());
+  const [plate, setPlate] = useState(
+    (initial?.plate === '-' ? '' : (initial?.plate ?? emptyService.plate)).toUpperCase(),
+  );
+>>>>>>> ef1e995 (Atualiza projeto fechamentoJobinho)
   const [selectedServices, setSelectedServices] = useState<SelectedServiceType[]>(initial?.selectedServices ?? []);
   const [description, setDescription] = useState(
     initial?.description ?? generateServiceDescription(initial?.selectedServices ?? []),
@@ -39,6 +51,13 @@ export default function ServiceForm({
     [selectedServices],
   );
 
+<<<<<<< HEAD
+=======
+  useEffect(() => {
+    vehicleInputRef.current?.focus();
+  }, []);
+
+>>>>>>> ef1e995 (Atualiza projeto fechamentoJobinho)
   const handleSelectedServicesChange = (next: SelectedServiceType[]) => {
     setSelectedServices(next);
     if (!isDescriptionTouched) {
@@ -66,8 +85,13 @@ export default function ServiceForm({
 
     const built: ServiceItem = {
       id: initial?.id ?? crypto.randomUUID(),
+<<<<<<< HEAD
       vehicle: vehicle.trim() || '-',
       plate: plate.trim() || '-',
+=======
+      vehicle: vehicle.trim().toUpperCase() || '-',
+      plate: plate.trim().toUpperCase() || '-',
+>>>>>>> ef1e995 (Atualiza projeto fechamentoJobinho)
       selectedServices,
       value: totalValue,
       description: description.trim() || generateServiceDescription(selectedServices),
@@ -92,8 +116,15 @@ export default function ServiceForm({
           <label htmlFor="service-vehicle">Veiculo</label>
           <input
             id="service-vehicle"
+<<<<<<< HEAD
             value={vehicle}
             onChange={(event) => setVehicle(event.target.value)}
+=======
+            ref={vehicleInputRef}
+            className="vehicle-input"
+            value={vehicle}
+            onChange={(event) => setVehicle(event.target.value.toUpperCase())}
+>>>>>>> ef1e995 (Atualiza projeto fechamentoJobinho)
             placeholder="Ex.: Prisma, Gol, Civic"
           />
         </div>
@@ -102,6 +133,10 @@ export default function ServiceForm({
           <label htmlFor="service-plate">Placa</label>
           <input
             id="service-plate"
+<<<<<<< HEAD
+=======
+            className="plate-input"
+>>>>>>> ef1e995 (Atualiza projeto fechamentoJobinho)
             value={plate}
             onChange={(event) => setPlate(event.target.value.toUpperCase())}
             placeholder="FUY4738"

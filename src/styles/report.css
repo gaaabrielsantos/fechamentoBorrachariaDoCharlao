@@ -1,4 +1,5 @@
 .report-sheet {
+<<<<<<< HEAD
   background: var(--surface);
   border: 1px solid var(--border-color);
   border-radius: 14px;
@@ -12,6 +13,14 @@
   border-bottom: 2px solid var(--line);
   padding-bottom: 16px;
   margin-bottom: 16px;
+=======
+  background: #ffffff;
+  color: #111827;
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  padding: 0;
+  overflow: hidden;
+>>>>>>> ef1e995 (Atualiza projeto fechamentoJobinho)
 }
 
 .clear-current-closing-button {
@@ -30,6 +39,7 @@
   opacity: 0.95;
 }
 
+<<<<<<< HEAD
 .report-brand h2 {
   font-size: clamp(2rem, 5vw, 3rem);
   letter-spacing: 0.04em;
@@ -89,6 +99,26 @@
 .report-day-head {
   background: var(--surface-soft);
   border-bottom: 1px solid var(--border-color);
+=======
+.report-body {
+  padding: 24px 36px;
+}
+
+.report-day {
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  margin-bottom: 14px;
+  overflow: hidden;
+  background: #ffffff;
+  color: #111827;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.report-day-head {
+  background: #f9fafb;
+  border-bottom: 1px solid #d1d5db;
+>>>>>>> ef1e995 (Atualiza projeto fechamentoJobinho)
   padding: 10px 12px;
   display: flex;
   justify-content: space-between;
@@ -104,8 +134,15 @@
   grid-template-columns: 1.1fr 0.7fr 1.7fr 0.6fr;
   gap: 8px;
   padding: 8px;
+<<<<<<< HEAD
   border-bottom: 1px dashed var(--border-color);
   align-items: center;
+=======
+  border-bottom: 1px dashed #d1d5db;
+  align-items: center;
+  break-inside: avoid;
+  page-break-inside: avoid;
+>>>>>>> ef1e995 (Atualiza projeto fechamentoJobinho)
 }
 
 .report-row:last-child {
@@ -114,23 +151,40 @@
 
 .report-row.head {
   font-weight: 700;
+<<<<<<< HEAD
   color: var(--text-color);
   background: var(--surface-soft);
   border: 1px solid var(--border-color);
+=======
+  color: #111827;
+  background: #f9fafb;
+  border: 1px solid #d1d5db;
+>>>>>>> ef1e995 (Atualiza projeto fechamentoJobinho)
   border-radius: 8px;
   margin-bottom: 8px;
 }
 
 .report-row.subtotal {
+<<<<<<< HEAD
   border-top: 2px solid var(--border-color);
   margin-top: 8px;
   font-weight: 700;
   background: var(--surface-soft);
+=======
+  border-top: 2px solid #d1d5db;
+  margin-top: 8px;
+  font-weight: 700;
+  background: #f9fafb;
+>>>>>>> ef1e995 (Atualiza projeto fechamentoJobinho)
   border-radius: 8px;
 }
 
 .report-empty {
+<<<<<<< HEAD
   color: var(--muted);
+=======
+  color: #6b7280;
+>>>>>>> ef1e995 (Atualiza projeto fechamentoJobinho)
   padding: 14px;
   text-align: center;
 }
@@ -143,8 +197,13 @@
 }
 
 @media (max-width: 920px) {
+<<<<<<< HEAD
   .report-top {
     grid-template-columns: 1fr;
+=======
+  .report-body {
+    padding: 20px;
+>>>>>>> ef1e995 (Atualiza projeto fechamentoJobinho)
   }
 
   .report-row {
@@ -167,4 +226,71 @@
     border: 0;
     padding: 0;
   }
+<<<<<<< HEAD
+=======
+
+  .report-body {
+    padding: 12px 16px 0;
+  }
+
+  .report-day,
+  .report-day-section,
+  .pdf-day-section,
+  .day-block {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .day-header,
+  .report-row,
+  .report-row.head,
+  .report-row.subtotal,
+  .report-service-row,
+  .service-card,
+  .day-total {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+}
+
+.pdf-report-area {
+  background: #ffffff;
+  color: #111827;
+}
+
+.pdf-report-area .report-body {
+  padding: 24px 36px;
+}
+
+.pdf-report-area .day-block,
+.pdf-report-area .report-day,
+.pdf-report-area .report-day-section,
+.pdf-report-area .pdf-day-section {
+  background: #ffffff;
+  color: #111827;
+  border: 1px solid #d1d5db;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+html.pdf-export-mode .report-sheet,
+html.pdf-export-mode .pdf-report-area {
+  background: #ffffff !important;
+  color: #111827 !important;
+}
+
+html.pdf-export-mode .report-day,
+html.pdf-export-mode .report-day-head,
+html.pdf-export-mode .report-row,
+html.pdf-export-mode .report-row.head,
+html.pdf-export-mode .report-row.subtotal {
+  background: #ffffff !important;
+  color: #111827 !important;
+}
+
+html.pdf-export-mode .report-day-head,
+html.pdf-export-mode .report-row.head,
+html.pdf-export-mode .report-row.subtotal {
+  background: #f9fafb !important;
+>>>>>>> ef1e995 (Atualiza projeto fechamentoJobinho)
 }

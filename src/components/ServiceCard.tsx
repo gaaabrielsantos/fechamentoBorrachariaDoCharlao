@@ -33,11 +33,19 @@ export default function ServiceCard({ service, serviceTypes, onEdit, onDelete }:
     <article className="service-row-card">
       <div>
         <span className="service-row-label">Veiculo</span>
+<<<<<<< HEAD
         <strong>{service.vehicle || '-'}</strong>
       </div>
       <div>
         <span className="service-row-label">Placa</span>
         <strong>{service.plate || '-'}</strong>
+=======
+        <strong>{(service.vehicle || '-').toUpperCase()}</strong>
+      </div>
+      <div>
+        <span className="service-row-label">Placa</span>
+        <strong>{(service.plate || '-').toUpperCase()}</strong>
+>>>>>>> ef1e995 (Atualiza projeto fechamentoJobinho)
       </div>
       <div>
         <span className="service-row-label">Descrição</span>

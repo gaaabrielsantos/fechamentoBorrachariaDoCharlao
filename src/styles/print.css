@@ -48,14 +48,70 @@
     break-inside: avoid;
   }
 
+<<<<<<< HEAD
   .report-day {
+=======
+  .report-header {
+    background: #333333 !important;
+    color: #ffffff !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+>>>>>>> ef1e995 (Atualiza projeto fechamentoJobinho)
     page-break-inside: avoid;
     break-inside: avoid;
   }
 
+<<<<<<< HEAD
+=======
+  .report-header * {
+    color: #ffffff !important;
+  }
+
+  .pdf-report-area .report-header__logo {
+    max-height: 120px !important;
+    width: auto !important;
+    max-width: 220px !important;
+  }
+
+  .report-day,
+  .report-day-section,
+  .pdf-day-section,
+  .day-block {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  .day-header,
+  .service-card,
+  .day-total,
+>>>>>>> ef1e995 (Atualiza projeto fechamentoJobinho)
   .report-row,
   .report-row.head,
   .report-row.subtotal {
     break-inside: avoid;
+<<<<<<< HEAD
+=======
+    page-break-inside: avoid;
+  }
+
+  .pdf-report-area {
+    background: #ffffff !important;
+    color: #111827 !important;
+  }
+
+  .pdf-report-area .report-body {
+    padding: 24px 36px;
+  }
+
+  .pdf-report-area .day-block,
+  .pdf-report-area .report-day,
+  .pdf-report-area .report-day-section,
+  .pdf-report-area .pdf-day-section {
+    background: #ffffff !important;
+    color: #111827 !important;
+    border: 1px solid #d1d5db !important;
+    page-break-inside: avoid;
+    break-inside: avoid;
+>>>>>>> ef1e995 (Atualiza projeto fechamentoJobinho)
   }
 }

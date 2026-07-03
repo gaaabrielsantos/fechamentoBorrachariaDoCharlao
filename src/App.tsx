@@ -21,6 +21,10 @@ import './styles/header.css';
 import './styles/forms.css';
 import './styles/services.css';
 import './styles/report.css';
+<<<<<<< HEAD
+=======
+import './styles/report-header.css';
+>>>>>>> ef1e995 (Atualiza projeto fechamentoJobinho)
 import './styles/history.css';
 import './styles/responsive.css';
 import './styles/print.css';

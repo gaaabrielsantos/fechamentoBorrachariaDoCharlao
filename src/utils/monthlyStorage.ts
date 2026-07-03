@@ -116,16 +116,43 @@ export const listSavedClosings = (): SavedClosingRef[] => {
 };
 
 export const saveServiceTypes = (types: ServiceType[]): void => {
+<<<<<<< HEAD
   localStorage.setItem(SERVICE_TYPES_KEY, JSON.stringify(types));
+=======
+  const normalized = types.map((item) => {
+    const singular = (item.nameSingular ?? item.name).trim().toUpperCase();
+    return {
+      ...item,
+      name: singular,
+      nameSingular: singular,
+      namePlural: (item.namePlural ?? suggestServicePlural(singular)).trim().toUpperCase(),
+    };
+  });
+
+  localStorage.setItem(SERVICE_TYPES_KEY, JSON.stringify(normalized));
+>>>>>>> ef1e995 (Atualiza projeto fechamentoJobinho)
 };
 
 export const loadServiceTypes = (): ServiceType[] => {
   const raw = localStorage.getItem(SERVICE_TYPES_KEY);
   if (!raw) return [];
   const parsed = JSON.parse(raw) as ServiceType[];
+<<<<<<< HEAD
   return parsed.map((item) => ({
     ...item,
     nameSingular: item.nameSingular ?? item.name,
     namePlural: item.namePlural ?? suggestServicePlural(item.name),
+=======
+
+  return parsed.map((item) => ({
+    ...item,
+    name: (item.nameSingular ?? item.name).trim().toUpperCase(),
+    nameSingular: (item.nameSingular ?? item.name).trim().toUpperCase(),
+    namePlural: (item.namePlural ?? suggestServicePlural(item.nameSingular ?? item.name)).trim().toUpperCase(),
+    unitValue:
+      (item.nameSingular ?? item.name).trim().toLowerCase() === 'balanceamento' && item.unitValue === 25
+        ? 20
+        : item.unitValue,
+>>>>>>> ef1e995 (Atualiza projeto fechamentoJobinho)
   }));
 };
